@@ -9,21 +9,21 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class AssetLoader {
-	public static Texture tacoTexture, walls, mexManTextureR1, mexManTextureR2,
-			mexManTextureD1, mexManTextureD2, mexManTextureU1, mexManTextureU2,
-			mexManTextureL1, mexManTextureL2, bPCarTextureR, bPCarTextureL,
+	public static Texture tacoTexture, walls, tacoManTextureR1, tacoManTextureR2,
+			tacoManTextureD1, tacoManTextureD2, tacoManTextureU1, tacoManTextureU2,
+			tacoManTextureL1, tacoManTextureL2, bPCarTextureR, bPCarTextureL,
 			bPCarChaseTextureR1, bPCarChaseTextureR2, bPCarChaseTextureR3,
 			bPCarChaseTextureR4, bPCarChaseTextureL1, bPCarChaseTextureL2,
 			bPCarChaseTextureL3, bPCarChaseTextureL4, greenCardTexture,
 			readyScreensTexture, readyTouchScreenTexture, powerUpTexture;
-	public static TextureRegion taco, wall, mexManR1, mexManR2, mexManL1,
-			mexManL2, mexManU1, mexManU2, mexManD1, mexManD2, bPCarRight,
+	public static TextureRegion taco, wall, tacoManR1, tacoManR2, tacoManL1,
+			tacoManL2, tacoManU1, tacoManU2, tacoManD1, tacoManD2, bPCarRight,
 			bPCarLeft, bPCarChaseR1, bPCarChaseR2, bPCarChaseR3, bPCarChaseR4,
 			bPCarChaseL1, bPCarChaseL2, bPCarChaseL3, bPCarChaseL4;
 	public static Sprite greenCard, desktopReadyPrompt, touchScreenReadyPrompt,
 			lifeSprite, powerUp;
 
-	public static Animation mexManAnimR, mexManAnimL, mexManAnimU, mexManAnimD,
+	public static Animation tacoManAnimR, tacoManAnimL, tacoManAnimU, tacoManAnimD,
 			bPCarAnimR, bPCarAnimL, bPCarAnimU, bPCarAnimD, bPCarChaseAnimR,
 			bPCarChaseAnimL, bPCarChaseAnimU, bPCarChaseAnimD, bPCarDeadAnimR,
 			bPCarDeadAnimL, bPCarDeadAnimU, bPCarDeadAnimD;
@@ -62,46 +62,46 @@ public class AssetLoader {
 		walls.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
 		wall = new TextureRegion(walls, 9, 9, TacoMan.GRID_W, TacoMan.GRID_H);
 
-		mexManTextureR1 = new Texture(Gdx.files.internal("MexMan.png"), true);
-		mexManTextureR1.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
-		mexManR1 = new TextureRegion(mexManTextureR1, 9, 9, TacoMan.GRID_W, TacoMan.GRID_H);
-		lifeSprite = new Sprite(mexManR1);
-		mexManTextureR2 = new Texture(Gdx.files.internal("MexManR2.png"), true);
-		mexManTextureR2.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
-		mexManR2 = new TextureRegion(mexManTextureR2, 9, 9, TacoMan.GRID_W, TacoMan.GRID_H);
-		TextureRegion[] mexManRight = { mexManR1, mexManR2 };
-		mexManAnimR = new Animation(.2f, mexManRight);
-		mexManAnimR.setPlayMode(Animation.PlayMode.LOOP);
+		tacoManTextureR1 = new Texture(Gdx.files.internal("TacoMan.png"), true);
+		tacoManTextureR1.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
+		tacoManR1 = new TextureRegion(tacoManTextureR1, 0, 0, TacoMan.NEW_GRID_W, TacoMan.NEW_GRID_H);
+		lifeSprite = new Sprite(tacoManR1);
+		tacoManTextureR2 = new Texture(Gdx.files.internal("TacoManR2.png"), true);
+		tacoManTextureR2.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
+		tacoManR2 = new TextureRegion(tacoManTextureR2, 0, 0, TacoMan.NEW_GRID_W, TacoMan.NEW_GRID_H);
+		TextureRegion[] tacoManRight = { tacoManR1, tacoManR2 };
+		tacoManAnimR = new Animation(.2f, tacoManRight);
+		tacoManAnimR.setPlayMode(Animation.PlayMode.LOOP);
 
-		mexManTextureL1 = new Texture(Gdx.files.internal("MexManL1.png"), true);
-		mexManTextureL1.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
-		mexManL1 = new TextureRegion(mexManTextureL1, 9, 9, TacoMan.GRID_W, TacoMan.GRID_H);
-		mexManTextureL2 = new Texture(Gdx.files.internal("MexManL2.png"), true);
-		mexManTextureL2.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
-		mexManL2 = new TextureRegion(mexManTextureL2, 9, 9, TacoMan.GRID_W, TacoMan.GRID_H);
-		TextureRegion[] mexManLeft = { mexManL1, mexManL2 };
-		mexManAnimL = new Animation(.2f, mexManLeft);
-		mexManAnimL.setPlayMode(Animation.PlayMode.LOOP);
+		tacoManTextureL1 = new Texture(Gdx.files.internal("TacoManL1.png"), true);
+		tacoManTextureL1.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
+		tacoManL1 = new TextureRegion(tacoManTextureL1, 0, 0, TacoMan.NEW_GRID_W, TacoMan.NEW_GRID_H);
+		tacoManTextureL2 = new Texture(Gdx.files.internal("TacoManL2.png"), true);
+		tacoManTextureL2.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
+		tacoManL2 = new TextureRegion(tacoManTextureL2, 0, 0, TacoMan.NEW_GRID_W, TacoMan.NEW_GRID_H);
+		TextureRegion[] tacoManLeft = { tacoManL1, tacoManL2 };
+		tacoManAnimL = new Animation(.2f, tacoManLeft);
+		tacoManAnimL.setPlayMode(Animation.PlayMode.LOOP);
 
-		mexManTextureD1 = new Texture(Gdx.files.internal("MexManD1.png"), true);
-		mexManTextureD1.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
-		mexManD1 = new TextureRegion(mexManTextureD1, 9, 9, TacoMan.GRID_W, TacoMan.GRID_H);
-		mexManTextureD2 = new Texture(Gdx.files.internal("MexManD2.png"), true);
-		mexManTextureD2.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
-		mexManD2 = new TextureRegion(mexManTextureD2, 9, 9, TacoMan.GRID_W, TacoMan.GRID_H);
-		TextureRegion[] mexManDown = { mexManD1, mexManD2 };
-		mexManAnimD = new Animation(.2f, mexManDown);
-		mexManAnimD.setPlayMode(Animation.PlayMode.LOOP);
+		tacoManTextureD1 = new Texture(Gdx.files.internal("TacoManD1.png"), true);
+		tacoManTextureD1.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
+		tacoManD1 = new TextureRegion(tacoManTextureD1, 0, 0, TacoMan.NEW_GRID_W, TacoMan.NEW_GRID_H);
+		tacoManTextureD2 = new Texture(Gdx.files.internal("TacoManD2.png"), true);
+		tacoManTextureD2.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
+		tacoManD2 = new TextureRegion(tacoManTextureD2, 0, 0, TacoMan.NEW_GRID_W, TacoMan.NEW_GRID_H);
+		TextureRegion[] tacoManDown = { tacoManD1, tacoManD2 };
+		tacoManAnimD = new Animation(.2f, tacoManDown);
+		tacoManAnimD.setPlayMode(Animation.PlayMode.LOOP);
 
-		mexManTextureU1 = new Texture(Gdx.files.internal("MexManU1.png"), true);
-		mexManTextureU1.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
-		mexManU1 = new TextureRegion(mexManTextureU1, 9, 9, TacoMan.GRID_W, TacoMan.GRID_H);
-		mexManTextureU2 = new Texture(Gdx.files.internal("MexManU2.png"), true);
-		mexManTextureU2.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
-		mexManU2 = new TextureRegion(mexManTextureU2, 9, 9, TacoMan.GRID_W, TacoMan.GRID_H);
-		TextureRegion[] mexManUp = { mexManU1, mexManU2 };
-		mexManAnimU = new Animation(.2f, mexManUp);
-		mexManAnimU.setPlayMode(Animation.PlayMode.LOOP);
+		tacoManTextureU1 = new Texture(Gdx.files.internal("TacoManU1.png"), true);
+		tacoManTextureU1.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
+		tacoManU1 = new TextureRegion(tacoManTextureU1, 0, 0, TacoMan.NEW_GRID_W, TacoMan.NEW_GRID_H);
+		tacoManTextureU2 = new Texture(Gdx.files.internal("TacoManU2.png"), true);
+		tacoManTextureU2.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
+		tacoManU2 = new TextureRegion(tacoManTextureU2, 0, 0, TacoMan.NEW_GRID_W, TacoMan.NEW_GRID_H);
+		TextureRegion[] tacoManUp = { tacoManU1, tacoManU2 };
+		tacoManAnimU = new Animation(.2f, tacoManUp);
+		tacoManAnimU.setPlayMode(Animation.PlayMode.LOOP);
 
 		bPCarTextureR = new Texture(
 				Gdx.files.internal("BorderPatrolCarR.png"), true);
@@ -182,14 +182,14 @@ public class AssetLoader {
 	public static void dispose() {
 		tacoTexture.dispose();
 		walls.dispose();
-		mexManTextureR1.dispose();
-		mexManTextureR2.dispose();
-		mexManTextureD1.dispose();
-		mexManTextureD2.dispose();
-		mexManTextureU1.dispose();
-		mexManTextureU2.dispose();
-		mexManTextureL1.dispose();
-		mexManTextureL2.dispose();
+		tacoManTextureR1.dispose();
+		tacoManTextureR2.dispose();
+		tacoManTextureD1.dispose();
+		tacoManTextureD2.dispose();
+		tacoManTextureU1.dispose();
+		tacoManTextureU2.dispose();
+		tacoManTextureL1.dispose();
+		tacoManTextureL2.dispose();
 		bPCarTextureR.dispose();
 		bPCarTextureL.dispose();
 		bPCarChaseTextureR1.dispose();

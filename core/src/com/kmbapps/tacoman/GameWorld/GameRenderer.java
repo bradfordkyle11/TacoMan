@@ -59,13 +59,13 @@ public class GameRenderer {
 
 	private int lives;
 
-	private Texture tacoTexture, walls, mexManTexture, bPCarTexture,
+	private Texture tacoTexture, walls, tacoManTexture, bPCarTexture,
 			bPCarChaseTexture, greenCardTexture, readyScreensTexture,
 			readyTouchScreenTexture;
-	private TextureRegion taco, wall, mexMan;
+	private TextureRegion taco, wall, tacoMan;
 	private Sprite bPCar, bPCarRight, bPCarLeft, bPCarUp, bPCarDown,
-			bPCarChaseRight, bPCarChaseLeft, bPCarChaseUp, mexManRight,
-			mexManLeft, mexManUp, mexManDown, greenCard, desktopReadyPrompt,
+			bPCarChaseRight, bPCarChaseLeft, bPCarChaseUp, tacoManRight,
+			tacoManLeft, tacoManUp, tacoManDown, greenCard, desktopReadyPrompt,
 			touchScreenReadyPrompt;
 
 	private Animation currentMexMan;
@@ -92,7 +92,7 @@ public class GameRenderer {
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false);
 
-		currentMexMan = AssetLoader.mexManAnimR;
+		currentMexMan = AssetLoader.tacoManAnimR;
 
 		tweenManager = new TweenManager();
 		Tween.registerAccessor(Sprite.class, new SpriteAccessor());
@@ -336,15 +336,15 @@ public class GameRenderer {
 	private void drawMexMan(float runTime) {
 
 		if (playerCharacter.getVelocity().x > 0) {
-			currentMexMan = AssetLoader.mexManAnimR;
+			currentMexMan = AssetLoader.tacoManAnimR;
 		} else if (playerCharacter.getVelocity().x < 0) {
-			currentMexMan = AssetLoader.mexManAnimL;
+			currentMexMan = AssetLoader.tacoManAnimL;
 		} else if (playerCharacter.getVelocity().y > 0) {
-			currentMexMan = AssetLoader.mexManAnimU;
+			currentMexMan = AssetLoader.tacoManAnimU;
 		} else if (playerCharacter.getVelocity().y < 0) {
-			currentMexMan = AssetLoader.mexManAnimD;
+			currentMexMan = AssetLoader.tacoManAnimD;
 		} else if (playerCharacter.isReset()) {
-			currentMexMan = AssetLoader.mexManAnimR;
+			currentMexMan = AssetLoader.tacoManAnimR;
 		}
 
 		if (playerCharacter.getVelocity().len() > 0) {
@@ -515,7 +515,7 @@ public class GameRenderer {
 	}
 
 	public void resetMexMan() {
-		currentMexMan = AssetLoader.mexManAnimR;
+		currentMexMan = AssetLoader.tacoManAnimR;
 	}
 
 	public void dispose() {
@@ -523,7 +523,7 @@ public class GameRenderer {
 		shapeRenderer.dispose();
 //		tacoTexture.dispose();
 //		walls.dispose();
-//		mexManTexture.dispose();
+//		tacoManTexture.dispose();
 //		bPCarTexture.dispose();
 //		bPCarChaseTexture.dispose();
 //		greenCardTexture.dispose();

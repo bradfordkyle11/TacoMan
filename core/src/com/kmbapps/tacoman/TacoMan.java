@@ -24,6 +24,9 @@ public class TacoMan extends Game {
 	
 	public static final int GRID_W = 45;
 	public static final int GRID_H = 45;
+	//TODO: redo all characters to this grid size
+	public static final int NEW_GRID_W = 72;
+	public static final int NEW_GRID_H = 72;
 	
 	public static final int TILES_HIGH = 32;
 	public static final int TILES_WIDE = 32;
