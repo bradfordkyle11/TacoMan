@@ -56,11 +56,11 @@ public class AssetLoader {
 		tacoTexture = new Texture(Gdx.files.internal("Taco.png"), true);
 		tacoTexture.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
 
-		taco = new TextureRegion(tacoTexture, 9, 5, TacoMan.GRID_W, TacoMan.GRID_H/2);
+		taco = new TextureRegion(tacoTexture, 0, 0, TacoMan.NEW_GRID_W, TacoMan.NEW_GRID_H);
 
 		walls = new Texture(Gdx.files.internal("Wall.png"), true);
 		walls.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);
-		wall = new TextureRegion(walls, 9, 9, TacoMan.GRID_W, TacoMan.GRID_H);
+		wall = new TextureRegion(walls, 0, 0, TacoMan.NEW_GRID_W, TacoMan.NEW_GRID_H);
 
 		tacoManTextureR1 = new Texture(Gdx.files.internal("TacoMan.png"), true);
 		tacoManTextureR1.setFilter(TextureFilter.MipMapLinearLinear, TextureFilter.Linear);

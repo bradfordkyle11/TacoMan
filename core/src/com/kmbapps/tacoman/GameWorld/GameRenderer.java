@@ -259,9 +259,9 @@ public class GameRenderer {
 				Consumable c = grid.getConsumable();
 				if (c != null){
 					if (c.getType() == Consumable.TYPE.Taco){
-						spriteBatch.draw(AssetLoader.taco, grid.getX() + (tileWidth - c.getWidth())/2 + world.getXOffs(), 
-								grid.getY() + (tileHeight - c.getHeight())/2 + yGridOffset - world.getYOffs(),
-								c.getWidth(), c.getHeight());
+						spriteBatch.draw(AssetLoader.taco, grid.getX() + world.getXOffs(),
+								grid.getY() + yGridOffset - world.getYOffs(),
+								tileWidth, tileHeight);
 					}
 					else if (c.getType() == Consumable.TYPE.GreenCard){
 						AssetLoader.greenCard.setBounds(grid.getX() + world.getXOffs(), grid.getY() + yGridOffset - world.getYOffs(), tileWidth, tileHeight);
