@@ -13,6 +13,6 @@ public class DesktopLauncher {
 		cfg.height = 2560/2;
 		cfg.resizable = false;
 
-		new LwjglApplication(new TacoMan(), cfg);
+		new LwjglApplication(new TacoMan(null), cfg);
 	}
 }

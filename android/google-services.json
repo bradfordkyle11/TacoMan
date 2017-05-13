@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "718300381706",
+    "firebase_url": "https://tacoman-f0450.firebaseio.com",
+    "project_id": "tacoman-f0450",
+    "storage_bucket": "tacoman-f0450.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718300381706:android:f0a5f6e0e6e6b4a4",
+        "android_client_info": {
+          "package_name": "com.kmbapps.tacoman"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718300381706-25hiun1ii5i70sk241ur6bluttu5lbad.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kmbapps.tacoman",
+            "certificate_hash": "71dff12bd48ccd58a0fd0a37ca5e02de46299a25"
+          }
+        },
+        {
+          "client_id": "718300381706-5ejqnqfvc11uv5462lvad0ui9e54hl9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN8sACnR-3zGHbEh9CgfILLvQIRrnv_jU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718300381706-5ejqnqfvc11uv5462lvad0ui9e54hl9c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

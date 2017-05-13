@@ -51,7 +51,7 @@ public class MyGestureListener implements GestureListener {
 				}
 
 			}
-			return true;
+			//return true;
 		}
 		return false;
 	}

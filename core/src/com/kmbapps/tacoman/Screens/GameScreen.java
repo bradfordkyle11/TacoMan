@@ -2,6 +2,7 @@ package com.kmbapps.tacoman.Screens;
 
 import java.io.IOException;
 
+import com.kmbapps.tacoman.Helpers.AdController;
 import com.kmbapps.tacoman.TacoMan;
 import com.kmbapps.tacoman.GameWorld.GameRenderer;
 import com.kmbapps.tacoman.GameWorld.GameWorld;
@@ -35,6 +36,7 @@ public class GameScreen implements Screen {
 	private TacoMan game;
 	private Stage pauseMenu, gameOverMenu;
 	private SpriteBatch batch;
+	private boolean adShown = true;
 	private int difficulty;
 	
 	private TextButton mainMenuButton, mainMenuButton2, resumeButton, restartButton, restartButton2;
@@ -45,9 +47,12 @@ public class GameScreen implements Screen {
 	float midPointY;
 	private float runTime;
 
-	public GameScreen(final TacoMan game, int difficulty) throws IOException {
+	private AdController mAdController;
+
+	public GameScreen(final TacoMan game, int difficulty, AdController adController) throws IOException {
 		this.difficulty = difficulty;
 		this.game = game;
+		mAdController = adController;
 		batch = new SpriteBatch();
 		float screenWidth = Gdx.graphics.getWidth();
 		float screenHeight = Gdx.graphics.getHeight();
@@ -261,11 +266,19 @@ public class GameScreen implements Screen {
 
 		
 		if (gameWorld.isPaused()) {
+			if (mAdController != null && !adShown) {
+				mAdController.showBannerAd();
+				adShown = true;
+			}
 			Gdx.input.setInputProcessor(pauseMenu);
 			renderer.render(myDelta, runTime);
 			pauseMenu.act();
 			pauseMenu.draw();
 		} else if (gameWorld.isGameOver()){
+			if (mAdController != null && !adShown) {
+				mAdController.showBannerAd();
+				adShown = true;
+			}
 			Gdx.input.setInputProcessor(gameOverMenu);
 			currScoreLabel.setText("Score: " + Integer.toString(gameWorld.getPlayerCharacter().getScore()));
 			hiScoreLabel.setText("Hi-score: " + Integer.toString(MyPrefs.getHiScore()));
@@ -274,6 +287,10 @@ public class GameScreen implements Screen {
 			gameOverMenu.draw();
 		}
 		else {
+			if (mAdController != null && adShown) {
+				mAdController.hideBannerAd();
+				adShown = false;
+			}
 			runTime += delta;
 			try {
 				gameWorld.update(myDelta);

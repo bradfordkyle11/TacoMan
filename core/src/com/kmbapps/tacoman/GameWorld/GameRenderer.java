@@ -50,8 +50,7 @@ public class GameRenderer {
 	private Map map;
 	private GameWorld world;
 	private Stage HUD;
-	private Label scoreLabel;
-	private Label levelLabel;
+	private Label scoreLabel, levelLabel, fpsLabel;
 
 	private String platform;
 
@@ -139,7 +138,14 @@ public class GameRenderer {
 		scoreLabelStyle.font = scoreFont;
 		scoreLabelStyle.fontColor = Color.BLACK;
 		scoreLabel.setStyle(scoreLabelStyle);
-		HUDTable.add(scoreLabel).top().space(20f);
+		HUDTable.add(scoreLabel).space(20f);
+
+		fpsLabel = new Label("FPS: 0", uiSkin);
+		LabelStyle fpsLabelStyle = fpsLabel.getStyle();
+		fpsLabelStyle.font = scoreFont;
+		fpsLabelStyle.fontColor = Color.BLACK;
+		fpsLabel.setStyle(fpsLabelStyle);
+		HUDTable.add(fpsLabel).top().space(20f);
 		
 		HUD.addActor(HUDTable);
 		
@@ -235,6 +241,7 @@ public class GameRenderer {
 		spriteBatch.end();
 		scoreLabel.setText("Score: " + Integer.toString(playerCharacter.getScore()));
 		levelLabel.setText("Lvl " + world.getCurrentLevelNum());
+		fpsLabel.setText("FPS: " + Gdx.graphics.getFramesPerSecond());
 		HUD.draw();
 	}
 

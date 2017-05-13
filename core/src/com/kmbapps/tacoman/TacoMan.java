@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.kmbapps.tacoman.Helpers.AdController;
 import com.kmbapps.tacoman.Helpers.AssetLoader;
 import com.kmbapps.tacoman.Helpers.MyPrefs;
 import com.kmbapps.tacoman.Screens.GameScreen;
@@ -30,8 +31,12 @@ public class TacoMan extends Game {
 	
 	public static final int TILES_HIGH = 32;
 	public static final int TILES_WIDE = 32;
-	
 
+	private AdController mAdController;
+
+	public TacoMan(AdController adController){
+		mAdController = adController;
+	}
 
 	@Override
 	public void create() {
@@ -39,7 +44,7 @@ public class TacoMan extends Game {
 		MyPrefs.load();
 		AssetLoader.loadGraphics(Gdx.graphics.getWidth() / TILES_WIDE, Gdx.graphics.getWidth() / TILES_WIDE);
 
-		mainMenu = new MainMenuScreen(this);
+		mainMenu = new MainMenuScreen(this, mAdController);
 		settings = new SettingsScreen(this);
 //		try {
 //			gameScreen = new GameScreen(this);
@@ -48,6 +53,7 @@ public class TacoMan extends Game {
 //			e.printStackTrace();
 //		}
 		setScreen(mainMenu);
+
 	}
 
 	@Override
@@ -61,7 +67,7 @@ public class TacoMan extends Game {
 	public GameScreen getGameScreen() {
 		int difficulty = MyPrefs.getDifficulty();
 		try {
-			return new GameScreen(this, difficulty);
+			return new GameScreen(this, difficulty, mAdController);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

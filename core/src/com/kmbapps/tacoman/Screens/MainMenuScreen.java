@@ -1,5 +1,6 @@
 package com.kmbapps.tacoman.Screens;
 
+import com.kmbapps.tacoman.Helpers.AdController;
 import com.kmbapps.tacoman.TacoMan;
 import com.kmbapps.tacoman.Helpers.ButtonFactory;
 import com.badlogic.gdx.Gdx;
@@ -19,9 +20,11 @@ public class MainMenuScreen implements Screen {
 	private Stage stage;
 	private SpriteBatch batch;
 	private ShapeRenderer shapeRenderer;
+	private AdController mAdController;
 	
-	public MainMenuScreen(final TacoMan game){
+	public MainMenuScreen(final TacoMan game, AdController adController){
 		this.game = game;
+		mAdController = adController;
 		batch = new SpriteBatch();
 		
 		stage = new Stage();
@@ -54,6 +57,9 @@ public class MainMenuScreen implements Screen {
 
 	@Override
 	public void render(float delta) {
+		if (mAdController != null) {
+			mAdController.showBannerAd();
+		}
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		stage.act(Gdx.graphics.getDeltaTime());
